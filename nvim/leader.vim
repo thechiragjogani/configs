@@ -33,7 +33,7 @@ nnoremap U <C-r> " remap U to <C-r> for easier redo
 nnoremap v <C-V> " make v enter blockwise visual mode, and CTRL-V enter visual mode
 nnoremap <C-V> v " make v enter blockwise visual mode, and CTRL-V enter visual mode
 nnoremap <C-s> <C-w>s " split current window horizontally
-nnoremap <leader>t <Esc>:tabe " New Tab
+nnoremap <leader>t <Esc>:tabe
 nnoremap <leader>v <cmd>CHADopen<cr>
 nnoremap <leader>l <cmd>call setqflist([])<cr>
 nnoremap <silent> <leader>wq :wq!<CR> " <leader>q quits the current window
