@@ -34,8 +34,8 @@ nnoremap v <C-V> " make v enter blockwise visual mode, and CTRL-V enter visual m
 nnoremap <C-V> v " make v enter blockwise visual mode, and CTRL-V enter visual mode
 nnoremap <C-s> <C-w>s " split current window horizontally
 nnoremap <leader>t <Esc>:tabe
-nnoremap <leader>v <cmd>CHADopen<cr>
-nnoremap <leader>l <cmd>call setqflist([])<cr>
+nnoremap <leader>v :CHADopen<cr>
+nnoremap <leader>l :call setqflist([])<cr>
 nnoremap <silent> <leader>wq :wq!<CR> " <leader>q quits the current window
 nnoremap <silent> <leader>q :q!<CR> " <leader>q quits the current window
 nnoremap <silent> yf :let @+=expand('%:p')<CR> " copies filepath to clipboard
