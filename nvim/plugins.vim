@@ -26,10 +26,7 @@ let g:coq_settings = { 'auto_start': 'shut-up' }
 
 let g:suda_smart_edit = v:true
 
-let g:chadtree_settings = {
-    'keymap.toggle_hidden': ["."],
-    'options.show_hidden': v:false,
-}
+let g:chadtree_settings = { 'keymap.toggle_hidden': ["."], 'options.show_hidden': v:false}
 
 let g:mkdp_echo_preview_url = 1
 let g:mkdp_page_title = '${name}'
