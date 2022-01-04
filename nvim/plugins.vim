@@ -31,9 +31,6 @@ let g:chadtree_settings = {
     'options.show_hidden': v:false,
 }
 
-" set to 1, nvim will open the preview window after entering the markdown buffer
-" default: 0
-let g:mkdp_auto_start = 1
 let g:mkdp_echo_preview_url = 1
-let g:mkdp_page_title = '「${name}」'
+let g:mkdp_page_title = '${name}'
 let g:mkdp_filetypes = ['markdown', 'html', 'phtml']
