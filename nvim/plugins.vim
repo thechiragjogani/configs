@@ -29,7 +29,7 @@ let g:suda_smart_edit = v:true
 let g:chadtree_settings = {
     'keymap.toggle_hidden': ["."],
     'options.show_hidden': v:false,
-    }
+}
 
 " set to 1, nvim will open the preview window after entering the markdown buffer
 " default: 0
