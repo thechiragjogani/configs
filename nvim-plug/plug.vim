@@ -16,4 +16,5 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " 9000+ Snippets
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
+    Plug 'Raimondi/delimitMate'
 call plug#end()

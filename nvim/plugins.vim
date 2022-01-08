@@ -31,3 +31,6 @@ let g:chadtree_settings = { 'keymap.toggle_hidden': ["."], 'options.show_hidden'
 let g:mkdp_echo_preview_url = 1
 let g:mkdp_page_title = '${name}'
 let g:mkdp_filetypes = ['markdown', 'html', 'phtml']
+
+let delimitMate_expand_cr = 2
+let delimitMate_expand_space = 1
