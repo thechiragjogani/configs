@@ -8,7 +8,6 @@ map <leader>u <Esc>:GundoToggle<CR> " Toggle graphical undo
 map <F9> <Esc><C-W>gF<CR>:tabm<CR> " Open file under cursor in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR> " Open word under cursor as ctag in new tab
 map <F1> gg=G " Formats document
-map <C-h> <C-w>h " Quick window switching left
 map <C-j> <C-w>j " Quick window switching down
 map <C-k> <C-w>k " Quick window switching up
 map <C-l> <C-w>l " Quick window switching right
