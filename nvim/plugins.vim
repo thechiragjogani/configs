@@ -34,3 +34,5 @@ let g:mkdp_filetypes = ['markdown', 'html', 'phtml']
 
 let delimitMate_expand_cr = 1
 let delimitMate_expand_space = 1
+
+let g:coq_settings = { "keymap.recommended": v:false }
