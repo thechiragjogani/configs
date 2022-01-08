@@ -28,18 +28,18 @@ vmap <leader>r <Esc>:call CompileRun()<CR>
 func! CompileRun()
 exec "w"
 if &filetype == 'c'
-    exec "!sudo gcc % -o % && ./%<"
+    exec "terminal sudo gcc % -o % && ./%<"
 elseif &filetype == 'cpp'
-    exec "!sudo g++ % -o % && ./%<"
+    exec "terminal sudo g++ % -o % && ./%<"
 elseif &filetype == 'java'
-    exec "!java %"
+    exec "terminal java %"
 elseif &filetype == 'sh'
-    exec "!bash %"
+    exec "terminal bash %"
 elseif &filetype == 'python'
-    exec "!python3 %"
+    exec "terminal python3 %"
 elseif &filetype == 'html'
-    exec "!firefox % &"
+    exec "terminal firefox % &"
 elseif &filetype == 'go'
-    exec "!go build % && go run %"
+    exec "terminal go build % && go run %"
 endif
 endfunc
