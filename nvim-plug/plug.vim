@@ -8,7 +8,6 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'junegunn/rainbow_parentheses.vim' " Coloured brackets
     Plug 'tomasiser/vim-code-dark' " colorscheme
     Plug 'mfussenegger/nvim-dap' " debugger
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 'markdown'} " markdown preview
     Plug 'lambdalisue/suda.vim' " sudo write
     Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'} " file explorer
     Plug 'ms-jpq/coq_nvim', {'branch': 'coq'} " code completion
@@ -16,4 +15,5 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'Raimondi/delimitMate'
+    Plug 'davidgranstrom/nvim-markdown-preview'
 call plug#end()

@@ -5,7 +5,7 @@ nnoremap <leader>sv :source $HOME/.config/nvim/init.vim<CR>:runtime!<CR>:redraw<
 
 " All modes Mappings
 map <leader>u <Esc>:GundoToggle<CR> " Toggle graphical undo
-map <F9> <Esc><C-W>gF<CR>:tabm<CR> " Open file under cursor in new tab
+map <leader>n <Esc><C-W>gF<CR>:tabm<CR> " Open file under cursor in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR> " Open word under cursor as ctag in new tab
 map <F1> gg=G " Formats document
 map <C-j> <C-w>j " Quick window switching down
@@ -25,6 +25,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+nmap <silent> <leader><cr> <plug>(nvim-markdown-preview)
 nnoremap <silent> <leader>W :wa!<CR> " <leader>W writes all buffers
 nnoremap <silent> <leader>cd :cd %:p:h<CR> " cd to the directory of the current buffer
 nnoremap <leader><Tab> <c-^> " switch between last two files
@@ -38,7 +39,6 @@ nnoremap <leader>l :call setqflist([])<cr>
 nnoremap <silent> <leader>wq :wq!<CR> " <leader>q quits the current window
 nnoremap <silent> <leader>q :q!<CR> " <leader>q quits the current window
 nnoremap <silent> yf :let @+=expand('%:p')<CR> " copies filepath to clipboard
-nnoremap <silent> <leader><enter> :MarkdownPreviewToggle<CR>
 " Move to previous/next buffer
 nnoremap <silent>    <A-,> :BufferPrevious<CR>
 nnoremap <silent>    <A-.> :BufferNext<CR>
