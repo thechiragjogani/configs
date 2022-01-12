@@ -34,6 +34,5 @@ let g:mkdp_filetypes = ['markdown', 'html', 'phtml']
 let g:mkdp_auto_start = 1
 let g:mkdp_command_for_global = 1
 let g:mkdp_browser = 'firefox-esr'
-let g:mkdp_browserfunc = 'firefox-esr & '
 
 let g:coq_settings = { "keymap.jump_to_mark": "<c-l>" }
