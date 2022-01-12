@@ -1,4 +1,8 @@
 mkfile() { mkdir -p "$(dirname "$1")" && sudo touch "$1";}
+report() {
+  pandoc $1 -o $2 --from markdown+yaml_metadata_block+raw_html --template eisvogel --table-of-contents --toc-depth 6 --number-sections --top-level-division=chapter --highlight-style breezedark
+  zathura $2
+}
 updater() {
   sudo apt --fix-broken install -y 2> /dev/null;
   sudo apt-get update -y 2> /dev/null;
