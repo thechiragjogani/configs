@@ -8,7 +8,7 @@ set nomodeline      " disable mode lines (security measure)
 set history=1000 undolevels=1000
 set ls=2 swapfile dir=/tmp/     " swap location
 set noshowmode showcmd cmdheight=1
-set ruler nu rnu
+set ruler nu rnu wrap
 set nowrap autoindent
 set ignorecase smartcase gdefault showmatch
 set hidden autowrite autowriteall nobomb switchbuf=usetab fsync buftype=
