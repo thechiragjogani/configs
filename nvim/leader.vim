@@ -26,6 +26,7 @@ nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 nmap <silent> <leader><cr> <plug>(nvim-markdown-preview)
+noremap <silent> <leader>w <ESC>:w!<CR> " <leader>w writes the whole buffer to the current file
 nnoremap <silent> <leader>W :wa!<CR> " <leader>W writes all buffers
 nnoremap <silent> <leader>cd :cd %:p:h<CR> " cd to the directory of the current buffer
 nnoremap <leader><Tab> <c-^> " switch between last two files
