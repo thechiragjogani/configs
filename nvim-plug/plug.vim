@@ -15,5 +15,5 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'Raimondi/delimitMate'
-    Plug 'davidgranstrom/nvim-markdown-preview'
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown']}
 call plug#end()

@@ -28,4 +28,8 @@ let g:suda_smart_edit = v:true
 
 let g:chadtree_settings = { 'keymap.toggle_hidden': ["."], 'options.show_hidden': v:false}
 
+let g:mkdp_echo_preview_url = 1
+let g:mkdp_page_title = '${name}'
+let g:mkdp_filetypes = ['markdown', 'html', 'phtml']
+
 let g:coq_settings = { "keymap.jump_to_mark": "<c-l>" }
