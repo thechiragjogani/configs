@@ -16,4 +16,6 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'Raimondi/delimitMate'
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown']}
+    Plug 'skywind3000/asynctasks.vim'
+    Plug 'skywind3000/asyncrun.vim'
 call plug#end()

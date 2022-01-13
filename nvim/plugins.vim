@@ -22,7 +22,7 @@ let bufferline.semantic_letters = v:true
 let bufferline.letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP'
 let bufferline.no_name_title = v:null
 
-let g:coq_settings = { 'auto_start': 'shut-up' }
+let g:coq_settings = { 'auto_start': true | 'shut-up', "keymap.jump_to_mark": "<c-l>" }
 
 let g:suda_smart_edit = v:true
 
@@ -35,4 +35,6 @@ let g:mkdp_auto_start = 1
 let g:mkdp_command_for_global = 1
 let g:mkdp_browser = 'firefox-esr'
 
-let g:coq_settings = { "keymap.jump_to_mark": "<c-l>" }
+let g:asyncrun_rootmarks = ['.git', '.svn', '.root', '.project', '.hg']
+let g:asynctasks_term_pos = 'xfce'
+let g:asynctasks_term_reuse = 1
