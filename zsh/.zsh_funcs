@@ -9,7 +9,7 @@ report() {
   --toc-depth 6 \
   --number-sections \
   --highlight-style breezedark \
-  --top-level-division=chapter
+  --template eisvogel
   evince $2.pdf&
 }
 updater() {
