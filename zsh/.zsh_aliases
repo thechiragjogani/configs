@@ -24,4 +24,3 @@ alias pentestlabs="cat /opt/labs.txt | xargs -I {} /usr/bin/zsh -c 'sudo docker 
 alias pentestlab="/opt/tools/pentestlab/pentestlab.sh"
 alias zoom="zoom </dev/null &>/dev/null &"
 alias xclip="xclip -selection clipboard"
-alias code="code --user-data-dir=$HOME/.vscode-root"

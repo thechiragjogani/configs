@@ -38,5 +38,5 @@ let g:mkdp_command_for_global = 1
 let g:mkdp_browser = "firefox-esr"
 
 let g:asyncrun_rootmarks = [".git", ".svn", ".root", ".project", ".hg"]
-let g:asynctasks_term_pos = 'q'
+let g:asynctasks_term_pos = 'xfce'
 let g:asynctasks_term_reuse = 1
