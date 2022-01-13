@@ -1,6 +1,15 @@
 mkfile() { mkdir -p "$(dirname "$1")" && sudo touch "$1";}
 report() {
-  pandoc $1 -o $2 --from markdown+yaml_metadata_block+raw_html --template eisvogel --table-of-contents --toc-depth 6 --number-sections --top-level-division=chapter --highlight-style breezedark
+  pandoc $1 \
+  --from gfm \
+  --to pdf \
+  -o $2.pdf \
+  --pdf-engine=pdflatex \
+  --table-of-contents \
+  --toc-depth 6 \
+  --number-sections \
+  --highlight-style breezedark \
+  --top-level-division=chapter
   zathura $2
 }
 updater() {
