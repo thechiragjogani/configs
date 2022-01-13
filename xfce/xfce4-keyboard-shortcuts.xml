@@ -35,10 +35,9 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="pkexec x-terminal-emulator"/>
       <property name="&lt;Primary&gt;e" type="string" value="exo-open --launch FileManager"/>
       <property name="&lt;Primary&gt;f" type="string" value="exo-open --launch WebBrowser"/>
-      <property name="&lt;Primary&gt;r" type="string" value="exo-open --launch TerminalEmulator ranger $HOME"/>
-      <property name="&lt;Primary&gt;t" type="string" value="exo-open --launch TerminalEmulator tmux"/>
-      <property name="&lt;Super&gt;l" type="string" value="xflock4"/>
-      <property name="&lt;Super&gt;p" type="string" value="xfce4-display-settings --minimal"/>
+      <property name="&lt;Primary&gt;t" type="string" value="exo-open --launch TerminalEmulator"/>
+      <property name="&lt;AltGr&gt;l" type="string" value="xflock4"/>
+      <property name="&lt;AltGr&gt;p" type="string" value="xfce4-display-settings --minimal"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;Escape" type="string" value="xfce4-taskmanager"/>
       <property name="override" type="bool" value="true"/>
     </property>
@@ -103,53 +102,51 @@
       <property name="&lt;Super&gt;Up" type="empty"/>
     </property>
     <property name="custom" type="empty">
+      <property name="&lt;AltGr&gt;1" type="string" value="move_window_workspace_1_key"/>
+      <property name="&lt;AltGr&gt;2" type="string" value="move_window_workspace_2_key"/>
+      <property name="&lt;AltGr&gt;3" type="string" value="move_window_workspace_3_key"/>
+      <property name="&lt;AltGr&gt;4" type="string" value="move_window_workspace_4_key"/>
+      <property name="&lt;AltGr&gt;5" type="string" value="move_window_workspace_5_key"/>
+      <property name="&lt;AltGr&gt;6" type="string" value="move_window_workspace_6_key"/>
+      <property name="&lt;AltGr&gt;7" type="string" value="move_window_workspace_7_key"/>
+      <property name="&lt;AltGr&gt;8" type="string" value="move_window_workspace_8_key"/>
+      <property name="&lt;AltGr&gt;9" type="string" value="move_window_workspace_9_key"/>
+      <property name="&lt;AltGr&gt;0" type="string" value="move_window_workspace_10_key"/>
+      <property name="&lt;AltGr&gt;Tab" type="string" value="next_workspace_key"/>
+      <property name="&lt;AltGr&gt;&lt;Shift&gt;Tab" type="string" value="prev_workspace_key"/>
+      <property name="&lt;Alt&gt;1" type="string" value="workspace_1_key"/>
+      <property name="&lt;Alt&gt;2" type="string" value="workspace_2_key"/>
+      <property name="&lt;Alt&gt;3" type="string" value="workspace_3_key"/>
+      <property name="&lt;Alt&gt;4" type="string" value="workspace_4_key"/>
+      <property name="&lt;Alt&gt;5" type="string" value="workspace_5_key"/>
+      <property name="&lt;Alt&gt;6" type="string" value="workspace_6_key"/>
+      <property name="&lt;Alt&gt;7" type="string" value="workspace_7_key"/>
+      <property name="&lt;Alt&gt;8" type="string" value="workspace_8_key"/>
+      <property name="&lt;Alt&gt;9" type="string" value="workspace_9_key"/>
+      <property name="&lt;Alt&gt;0" type="string" value="workspace_10_key"/>
       <property name="&lt;Alt&gt;Delete" type="string" value="add_workspace_key"/>
       <property name="&lt;Alt&gt;&lt;Shift&gt;Delete" type="string" value="del_workspace_key"/>
-      <property name="&lt;Super&gt;1" type="string" value="workspace_1_key"/>
-      <property name="&lt;Super&gt;2" type="string" value="workspace_2_key"/>
-      <property name="&lt;Super&gt;3" type="string" value="workspace_3_key"/>
-      <property name="&lt;Super&gt;4" type="string" value="workspace_4_key"/>
-      <property name="&lt;Super&gt;5" type="string" value="workspace_5_key"/>
-      <property name="&lt;Super&gt;6" type="string" value="workspace_6_key"/>
-      <property name="&lt;Super&gt;7" type="string" value="workspace_7_key"/>
-      <property name="&lt;Super&gt;8" type="string" value="workspace_8_key"/>
-      <property name="&lt;Super&gt;9" type="string" value="workspace_9_key"/>
-      <property name="&lt;Super&gt;0" type="string" value="workspace_10_key"/>
-      <property name="&lt;Alt&gt;1" type="string" value="move_window_workspace_1_key"/>
-      <property name="&lt;Alt&gt;2" type="string" value="move_window_workspace_2_key"/>
-      <property name="&lt;Alt&gt;3" type="string" value="move_window_workspace_3_key"/>
-      <property name="&lt;Alt&gt;4" type="string" value="move_window_workspace_4_key"/>
-      <property name="&lt;Alt&gt;5" type="string" value="move_window_workspace_5_key"/>
-      <property name="&lt;Alt&gt;6" type="string" value="move_window_workspace_6_key"/>
-      <property name="&lt;Alt&gt;7" type="string" value="move_window_workspace_7_key"/>
-      <property name="&lt;Alt&gt;8" type="string" value="move_window_workspace_8_key"/>
-      <property name="&lt;Alt&gt;9" type="string" value="move_window_workspace_9_key"/>
-      <property name="&lt;Alt&gt;0" type="string" value="move_window_workspace_10_key"/>
-      <property name="&lt;Super&gt;Tab" type="string" value="next_workspace_key"/>
-      <property name="&lt;Super&gt;&lt;Shift&gt;Tab" type="string" value="prev_workspace_key"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;h" type="string" value="move_window_left_workspace_key"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;l" type="string" value="move_window_right_workspace_key"/>
       <property name="&lt;Alt&gt;Tab" type="string" value="cycle_windows_key"/>
       <property name="&lt;Alt&gt;&lt;Shift&gt;Tab" type="string" value="cycle_reverse_windows_key"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;h" type="string" value="move_window_left_workspace_key"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;l" type="string" value="move_window_right_workspace_key"/>
+      <property name="&lt;AltGr&gt;d" type="string" value="show_desktop_key"/>
+      <property name="&lt;AltGr&gt;h" type="string" value="tile_left_key"/>
+      <property name="&lt;AltGr&gt;j" type="string" value="tile_down_key"/>
+      <property name="&lt;AltGr&gt;k" type="string" value="maximize_window_key"/>
+      <property name="&lt;AltGr&gt;l" type="string" value="tile_right_key"/>
       <property name="&lt;Alt&gt;F4" type="string" value="close_window_key"/>
-      <property name="&lt;Super&gt;d" type="string" value="show_desktop_key"/>
-      <property name="&lt;Super&gt;Up" type="string" value="maximize_window_key"/>
-      <property name="&lt;Super&gt;Left" type="string" value="tile_left_key"/>
-      <property name="&lt;Super&gt;Right" type="string" value="tile_right_key"/>
-      <property name="&lt;Super&gt;Down" type="string" value="tile_down_key"/>
-      <property name="&lt;Primary&gt;&lt;Super&gt;Up" type="string" value="tile_up_key"/>
-      <property name="&lt;Primary&gt;&lt;Super&gt;Down" type="string" value="hide_window_key"/>
       <property name="&lt;Alt&gt;F6" type="string" value="stick_window_key"/>
       <property name="&lt;Alt&gt;F7" type="string" value="move_window_key"/>
       <property name="&lt;Alt&gt;F8" type="string" value="resize_window_key"/>
       <property name="&lt;Alt&gt;F11" type="string" value="fullscreen_key"/>
       <property name="&lt;Alt&gt;F12" type="string" value="above_key"/>
       <property name="&lt;Alt&gt;space" type="string" value="popup_menu_key"/>
-      <property name="Escape" type="string" value="cancel_key"/>
       <property name="Up" type="string" value="up_key"/>
       <property name="Right" type="string" value="right_key"/>
       <property name="Left" type="string" value="left_key"/>
       <property name="Down" type="string" value="down_key"/>
+      <property name="Escape" type="string" value="cancel_key"/>
       <property name="override" type="bool" value="true"/>
     </property>
   </property>
