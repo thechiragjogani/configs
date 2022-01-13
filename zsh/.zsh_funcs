@@ -26,15 +26,15 @@ updater() {
   cat /opt/labs.txt | xargs -I {} /usr/bin/zsh -c 'sudo docker pull {} 2> /dev/null'
 }
 goodbye() {
-  /opt/tools/pentestlab/pentestlab.sh stop bwapp;
-  /opt/tools/pentestlab/pentestlab.sh stop dvwa;
-  /opt/tools/pentestlab/pentestlab.sh stop juiceshop;
-  /opt/tools/pentestlab/pentestlab.sh stop webgoat8;
-  /opt/tools/pentestlab/pentestlab.sh stop webgoat7;
-  /opt/tools/pentestlab/pentestlab.sh stop altoro;
-  /opt/tools/pentestlab/pentestlab.sh stop mutillidae;
-  /opt/tools/pentestlab/pentestlab.sh stop vulnerablewordpress;
-  /opt/tools/pentestlab/pentestlab.sh stop securityninjas;
+  pentestlab stop bwapp;
+  pentestlab stop dvwa;
+  pentestlab stop juiceshop;
+  pentestlab stop webgoat8;
+  pentestlab stop webgoat7;
+  pentestlab stop altoro;
+  pentestlab stop mutillidae;
+  pentestlab stop vulnerablewordpress;
+  pentestlab stop securityninjas;
   poweroff
 }
 # Extract file, example. "ex package.tar.bz2"
