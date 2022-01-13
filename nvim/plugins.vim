@@ -22,7 +22,7 @@ let bufferline.semantic_letters = v:true
 let bufferline.letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP'
 let bufferline.no_name_title = v:null
 
-let g:coq_settings = { 'auto_start': true | 'shut-up', "keymap.jump_to_mark": "<c-l>" }
+let g:coq_settings = { 'auto_start': v:true | 'shut-up', "keymap.jump_to_mark": "<c-l>" }
 
 let g:suda_smart_edit = v:true
 
