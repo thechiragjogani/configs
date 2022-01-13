@@ -33,6 +33,7 @@ let g:mkdp_echo_preview_url = 0
 let g:mkdp_page_title = "${name}"
 let g:mkdp_filetypes = ["markdown", "html", "phtml"]
 let g:mkdp_auto_start = 0
+let g:mkdp_auto_close = 0
 let g:mkdp_command_for_global = 1
 let g:mkdp_browser = "firefox-esr"
 
