@@ -26,7 +26,7 @@
       <property name="XF86WWW" type="empty"/>
     </property>
     <property name="custom" type="empty">
-      <property name="Print" type="string" value="/usr/share/kali-themes/xfce4-screenshooter"/>
+      <property name="Print" type="string" value="/usr/bin/xfce4-screenshooter"/>
       <property name="&lt;Shift&gt;Print" type="string" value="/usr/share/kali-themes/xfce4-screenshooter --region"/>
       <property name="&lt;Alt&gt;F1" type="string" value="xfce4-popup-whiskermenu --pointer"/>
       <property name="&lt;Alt&gt;F2" type="string" value="xfce4-appfinder --collapsed"/>
