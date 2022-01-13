@@ -125,10 +125,10 @@
       <property name="&lt;Alt&gt;0" type="string" value="move_window_workspace_10_key"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;h" type="string" value="move_window_left_workspace_key"/>
       <property name="&lt;Primary&gt;&lt;Alt&gt;l" type="string" value="move_window_right_workspace_key"/>
-      <property name="&lt;Super&gt;Tab" type="string" value="cycle_workspace_key"/>
-      <property name="&lt;Super&gt;&lt;Shift&gt;Tab" type="string" value="next_workspace_key"/>
+      <property name="&lt;Super&gt;Tab" type="string" value="next_workspace_key"/>
+      <property name="&lt;Super&gt;&lt;Shift&gt;Tab" type="string" value="prev_workspace_key"/>
       <property name="&lt;Alt&gt;Tab" type="string" value="cycle_windows_key"/>
-      <property name="&lt;Alt&gt;&lt;Shift&gt;Tab" type="string" value="prev_windows_key"/>
+      <property name="&lt;Alt&gt;&lt;Shift&gt;Tab" type="string" value="cycle_reverse_windows_key"/>
       <property name="&lt;Alt&gt;F4" type="string" value="close_window_key"/>
       <property name="Up" type="string" value="up_key"/>
       <property name="Right" type="string" value="right_key"/>
