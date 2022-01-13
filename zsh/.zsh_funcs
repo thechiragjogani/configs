@@ -1,16 +1,16 @@
 mkfile() { mkdir -p "$(dirname "$1")" && sudo touch "$1";}
 report() {
-  pandoc $1 \
-  --from gfm \
+  pandoc *.md \
+  -o $1.pdf \
+  --from markdown+yaml_metadata_block+raw_html \
   --to pdf \
-  -o $2.pdf \
-  --pdf-engine=pdflatex \
   --table-of-contents \
   --toc-depth 6 \
   --number-sections \
   --highlight-style breezedark \
-  --template eisvogel
-  evince $2.pdf&
+  --template eisvogel \
+  --pdf-engine=pdflatex
+  evince $1.pdf </dev/null &>/dev/null &
 }
 updater() {
   sudo apt --fix-broken install -y 2> /dev/null;
