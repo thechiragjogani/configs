@@ -5,7 +5,7 @@ alias fix="sudo apt install -f"
 alias ls='ls --color=always'
 alias la='ls -A'
 alias l='ls -CF'
-alias ll="clear && ls --color=always -rthla"
+alias ll="clear && ls --color=always -thla"
 alias dir='dir --color=auto'
 alias vdir='vdir --color=auto'
 alias diff='diff --color=auto'
