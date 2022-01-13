@@ -35,8 +35,7 @@
       <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="pkexec x-terminal-emulator"/>
       <property name="&lt;Primary&gt;e" type="string" value="exo-open --launch FileManager"/>
       <property name="&lt;Primary&gt;f" type="string" value="exo-open --launch WebBrowser"/>
-      <property name="&lt;Primary&gt;r" type="string" value="exo-open --launch TerminalEmulator ranger"/>
-      <property name="&lt;Primary&gt;t" type="string" value="exo-open --launch TerminalEmulator tmux"/>
+      <property name="&lt;Primary&gt;t" type="string" value="exo-open --launch TerminalEmulator"/>
       <property name="&rt;Alt&gt;l" type="string" value="xflock4"/>
       <property name="&rt;Alt&gt;p" type="string" value="xfce4-display-settings --minimal"/>
       <property name="&lt;Primary&gt;&lt;Shift&gt;Escape" type="string" value="xfce4-taskmanager"/>
