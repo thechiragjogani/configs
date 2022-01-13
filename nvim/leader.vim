@@ -44,8 +44,8 @@ nnoremap <silent> yf :let @+=expand('%:p')<CR> " copies filepath to clipboard
 nnoremap <silent>    <A-,> :BufferPrevious<CR>
 nnoremap <silent>    <A-.> :BufferNext<CR>
 " Re-order to previous/next buffer
-nnoremap <silent>    <A-<> :BufferMovePrevious<CR>
-nnoremap <silent>    <A->> :BufferMoveNext<CR>
+nnoremap <silent>    <C-<> :BufferMovePrevious<CR>
+nnoremap <silent>    <C->> :BufferMoveNext<CR>
 " Goto buffer in position...
 nnoremap <silent>    <leader>1 :BufferGoto 1<CR>
 nnoremap <silent>    <leader>2 :BufferGoto 2<CR>
