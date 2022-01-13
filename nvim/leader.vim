@@ -15,8 +15,8 @@ noremap <silent> <leader>sw :%s/\\s\\+$//e<CR> " Remove trailing whitespaces
 noremap <silent> <leader>$ :%s/<C-V><CR>//e<CR> " <leader>$ fixes mixed EOLs (^M)
 noremap <silent><leader>jj :m+<CR> " move current line down
 noremap <silent><leader>kk :m-2<CR> " move current line up
-noremap <silent><leader>cb :AsyncTask file-build<cr> " Code build
-noremap <silent><leader>cr :AsyncTask file-run<cr> " Code run
+noremap <silent><leader>cb :AsyncTask file-build<cr>
+noremap <silent><leader>cr :AsyncTask file-run<cr>
 
 " Normal mode Mappings
 nmap <leader>g :tabnew\|read !grep -Hnr '<C-R><C-W>'<CR> " grep recursively for word under cursor
