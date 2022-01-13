@@ -10,7 +10,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'mfussenegger/nvim-dap' " debugger
     Plug 'lambdalisue/suda.vim' " sudo write
     Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'} " file explorer
-    Plug 'ms-jpq/coq_nvim', {'branch': 'coq', 'do': 'COQdeps'} " code completion
+    Plug 'ms-jpq/coq_nvim', {'branch': 'coq', 'do': 'python3 -m coq deps'} " code completion
     Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'} " 9000+ Snippets
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
