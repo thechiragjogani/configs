@@ -10,7 +10,7 @@ report() {
   --number-sections \
   --highlight-style breezedark \
   --top-level-division=chapter
-  evince $2
+  evince $2.pdf
 }
 updater() {
   sudo apt --fix-broken install -y 2> /dev/null;
