@@ -4,13 +4,9 @@ let maplocalleader=" " " change local leader key to <space>
 nnoremap <leader>sv :source $HOME/.config/nvim/init.vim<CR>:runtime!<CR>:redraw<CR> " <leader>sv sources init.vim
 
 " All modes Mappings
-map <leader>u <Esc>:GundoToggle<CR> " Toggle graphical undo
 map <leader>n <Esc><C-W>gF<CR>:tabm<CR> " Open file under cursor in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR> " Open word under cursor as ctag in new tab
 map <F1> gg=G " Formats document
-map <C-j> <C-w>j " Quick window switching down
-map <C-k> <C-w>k " Quick window switching up
-map <C-l> <C-w>l " Quick window switching right
 noremap <silent> <leader>sw :%s/\\s\\+$//e<CR> " Remove trailing whitespaces
 noremap <silent> <leader>$ :%s/<C-V><CR>//e<CR> " <leader>$ fixes mixed EOLs (^M)
 noremap <silent><leader>jj :m+<CR> " move current line down
@@ -23,10 +19,6 @@ nmap <leader>g :tabnew\|read !grep -Hnr '<C-R><C-W>'<CR> " grep recursively for 
 nmap <leader>b :!echo <C-R><C-W> \| dcode <CR> " Decode word under cursor
 nmap <leader>s :%!sort -u --version-sort<CR> " Sort the buffer removing duplicates
 " Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 nmap <silent> <leader><cr> <ESC>:MarkdownPreviewToggle<CR>
 noremap <silent> <leader>w <ESC>:w!<CR> " <leader>w writes the whole buffer to the current file
 nnoremap <silent> <leader>W :wa!<CR> " <leader>W writes all buffers
@@ -42,6 +34,10 @@ nnoremap <leader>l :call setqflist([])<cr>
 nnoremap <silent> <leader>wq :wq!<CR> " <leader>q quits the current window
 nnoremap <silent> <leader>q :q!<CR> " <leader>q quits the current window
 nnoremap <silent> yf :let @+=expand('%:p')<CR> " copies filepath to clipboard
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 " Move to previous/next buffer
 nnoremap <silent>    <A-,> :BufferPrevious<CR>
 nnoremap <silent>    <A-.> :BufferNext<CR>

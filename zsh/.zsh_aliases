@@ -1,7 +1,7 @@
 #aliases for efficiency
 alias ins="sudo apt install -y"
 alias rem="sudo apt purge -y"
-alias fix="sudo apt install -f"
+alias fix="sudo apt install -f -y"
 alias ls='ls --color=always'
 alias la='ls -A'
 alias l='ls -CF'
@@ -24,3 +24,5 @@ alias pentestlabs="cat /opt/labs.txt | xargs -I {} /usr/bin/zsh -c 'sudo docker 
 alias pentestlab="/opt/tools/pentestlab/pentestlab.sh"
 alias zoom="zoom </dev/null &>/dev/null &"
 alias xclip="xclip -selection clipboard"
+alias nvim="nvim -c \"COQnow -s\""
+alias vim="nvim -c \"COQnow -s\""

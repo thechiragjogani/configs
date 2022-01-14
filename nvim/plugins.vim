@@ -22,7 +22,7 @@ let bufferline.semantic_letters = v:true
 let bufferline.letters = "asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP"
 let bufferline.no_name_title = v:null
 
-let g:coq_settings = { "keymap.jump_to_mark": "<c-l>", 'auto_start': "shut-up" }
+let g:coq_settings = { "keymap.jump_to_mark": "<c-l>" }
 
 let g:suda_smart_edit = v:true
 
@@ -30,11 +30,11 @@ let g:chadtree_settings = { "keymap.toggle_hidden": ["."], "options.show_hidden"
 
 let g:mkdp_echo_preview_url = 0
 let g:mkdp_page_title = "${name}"
-let g:mkdp_filetypes = ["markdown", "html", "phtml"]
 let g:mkdp_auto_start = 0
 let g:mkdp_auto_close = 0
 let g:mkdp_command_for_global = 1
 let g:mkdp_browser = "firefox-esr"
+let g:mkdp_filetypes = ["markdown", "html", "javascript"]
 
 let g:asyncrun_rootmarks = [".git", ".svn", ".root", ".project", ".hg"]
 let g:asynctasks_term_pos = 'xfce'

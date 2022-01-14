@@ -1,6 +1,5 @@
 call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'tpope/vim-fugitive' " git
-    Plug 'sjl/gundo.vim' " graphical undo
     Plug 'b3nj5m1n/kommentary' " comments toggle
     Plug 'romgrk/barbar.nvim' " status bar (top)
     Plug 'nvim-lualine/lualine.nvim' " status line (bottom)
@@ -15,7 +14,9 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
     Plug 'Raimondi/delimitMate'
-    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown']}
+    Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
     Plug 'skywind3000/asynctasks.vim'
     Plug 'skywind3000/asyncrun.vim'
+    Plug 'neovim/nvim-lspconfig'
+    Plugin 'christoomey/vim-tmux-navigator'
 call plug#end()

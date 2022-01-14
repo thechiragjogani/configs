@@ -24,7 +24,7 @@ set startofline " move to first non-blank of the line when using PageUp/PageDown
 set scrolloff=8     " number of lines to keep above and below the cursor
 set splitright splitbelow
 set nojoinspaces showmatch matchtime=4 matchpairs+=<:>
-set clipboard+=unnamed
+set clipboard^=unnamed,unnamedplus
 set completeopt=longest,menuone,preview " better completion
 set diffopt+=vertical
 set nobackup nowritebackup
