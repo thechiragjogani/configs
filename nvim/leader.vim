@@ -1,9 +1,8 @@
 let mapleader=" " " change leader key to <space>
 let maplocalleader=" " " change local leader key to <space>
 
-nnoremap <leader>sv :source $HOME/.config/nvim/init.vim<CR>:runtime!<CR>:redraw<CR> " <leader>sv sources init.vim
+nnoremap <leader>sv :source $HOME/.config/nvim/init.vim " <leader>sv sources init.vim
 
-" All modes Mappings
 map <leader>n <Esc><C-W>gF<CR>:tabm<CR> " Open file under cursor in new tab
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR> " Open word under cursor as ctag in new tab
 map <F1> gg=G " Formats document
