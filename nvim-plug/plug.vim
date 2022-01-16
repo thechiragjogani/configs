@@ -1,10 +1,10 @@
 call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'tpope/vim-fugitive' " git
-    Plug 'b3nj5m1n/kommentary' " comments toggle
+    Plug 'preservim/nerdcommenter' " comments toggle
     Plug 'romgrk/barbar.nvim' " status bar (top)
     Plug 'nvim-lualine/lualine.nvim' " status line (bottom)
     Plug 'kyazdani42/nvim-web-devicons' " programming icons
-    Plug 'junegunn/rainbow_parentheses.vim' " Coloured brackets
+    Plug Plug 'luochen1990/rainbow' " Coloured brackets
     Plug 'tomasiser/vim-code-dark' " colorscheme
     Plug 'mfussenegger/nvim-dap' " debugger
     Plug 'lambdalisue/suda.vim' " sudo write

@@ -1,5 +1,7 @@
 runtime macros/matchit.vim  " enable extended % matching
 
+let g:rainbow_active = 1
+
 let bufferline = get(g:, "bufferline", {})
 let bufferline.add_in_buffer_number_order = v:true
 let bufferline.animation = v:true
