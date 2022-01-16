@@ -4,7 +4,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'romgrk/barbar.nvim' " status bar (top)
     Plug 'nvim-lualine/lualine.nvim' " status line (bottom)
     Plug 'kyazdani42/nvim-web-devicons' " programming icons
-    Plug Plug 'luochen1990/rainbow' " Coloured brackets
+    Plug 'luochen1990/rainbow' " Coloured brackets
     Plug 'tomasiser/vim-code-dark' " colorscheme
     Plug 'mfussenegger/nvim-dap' " debugger
     Plug 'lambdalisue/suda.vim' " sudo write
