@@ -18,5 +18,5 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'skywind3000/asynctasks.vim'
     Plug 'skywind3000/asyncrun.vim'
     Plug 'neovim/nvim-lspconfig'
-    Plugin 'christoomey/vim-tmux-navigator'
+    Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
