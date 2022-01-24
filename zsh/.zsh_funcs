@@ -156,10 +156,18 @@ ncl(){nc -l -n -vv -p $1}
 
 #----- CTF's -----
 #HackTheBox
-htb(){pid=$(pgrep openvpn | sed -ne 's/\([0-9]*\)/\1/p') && kill $pid && cd $HOME/ctf/htb; openvpn *.ovpn &>/dev/null &; clear}
+htb(){
+  pid=$(pgrep openvpn | sed -ne 's/\([0-9]*\)/\1/p')
+  kill $pid && cd $HOME/ctf/htb/
+  sudo openvpn *.ovpn &>/dev/null &; clear
+}
 
 #TryHackMe
-thm(){pid=$(pgrep openvpn | sed -ne 's/\([0-9]*\)/\1/p') && kill $pid && cd $HOME/ctf/thm; openvpn *.ovpn &>/dev/null &; clear}
+thm(){
+  pid=$(pgrep openvpn | sed -ne 's/\([0-9]*\)/\1/p')
+  kill $pid && cd $HOME/ctf/thm/
+  sudo openvpn *.ovpn &>/dev/null &; clear
+}
 
 #Get those flags
 ctf(){cd $HOME/ctf && ll}
