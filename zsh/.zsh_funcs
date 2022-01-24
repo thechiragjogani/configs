@@ -159,14 +159,14 @@ ncl(){nc -l -n -vv -p $1}
 htb(){
   pid=$(pgrep openvpn | sed -ne 's/\([0-9]*\)/\1/p')
   kill $pid; cd $HOME/ctf/htb/
-  sudo openvpn *.ovpn &>/dev/null &; clear
+  sudo openvpn *.ovpn
 }
 
 #TryHackMe
 thm(){
   pid=$(pgrep openvpn | sed -ne 's/\([0-9]*\)/\1/p')
   kill $pid; cd $HOME/ctf/thm/
-  sudo openvpn *.ovpn &>/dev/null &; clear
+  sudo openvpn *.ovpn
 }
 
 #Get those flags
