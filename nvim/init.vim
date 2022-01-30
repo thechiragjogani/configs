@@ -1,6 +1,5 @@
 set rtp+=$HOME/.config/nvim/
 set rtp+=$HOME/.config/nvim/plugged/nvim-lspconfig/
-set rtp+=$HOME/.config/nvim/plugged/nvim-dap/
 set rtp+=$HOME/.config/nvim/plugged/coq_nvim/
 lua require("plug")
 source $HOME/.config/nvim/plug.vim " plugin loader
