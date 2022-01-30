@@ -6,7 +6,7 @@ call plug#begin('$HOME/.config/nvim/plugged')
     Plug 'kyazdani42/nvim-web-devicons' " programming icons
     Plug 'luochen1990/rainbow' " Coloured brackets
     Plug 'tomasiser/vim-code-dark' " colorscheme
-    Plug 'mfussenegger/nvim-dap' " debugger
+    Plug 'puremourning/vimspector' " debugger
     Plug 'lambdalisue/suda.vim' " sudo write
     Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'} " file explorer
     Plug 'ms-jpq/coq_nvim', {'branch': 'coq', 'do': 'python3 -m coq deps'} " code completion

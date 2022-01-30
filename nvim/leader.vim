@@ -12,14 +12,17 @@ noremap <silent><leader>jj :m+<CR> " move current line down
 noremap <silent><leader>kk :m-2<CR> " move current line up
 noremap <silent><leader>cb :AsyncTask file-build<cr>
 noremap <silent><leader>cr :AsyncTask file-run<cr>
+noremap <silent> <leader>w <ESC>:w!<CR> " <leader>w writes the whole buffer to the current file
 
 " Normal mode Mappings
 nmap <leader>g :tabnew\|read !grep -Hnr '<C-R><C-W>'<CR> " grep recursively for word under cursor
 nmap <leader>b :!echo <C-R><C-W> \| dcode <CR> " Decode word under cursor
 nmap <leader>s :%!sort -u --version-sort<CR> " Sort the buffer removing duplicates
-" Remap keys for gotos
 nmap <silent> <leader><cr> <ESC>:MarkdownPreviewToggle<CR>
-noremap <silent> <leader>w <ESC>:w!<CR> " <leader>w writes the whole buffer to the current file
+nmap <Leader>dh <Plug>VimspectorStepOut
+nmap <Leader>dj <Plug>VimspectorStepOver
+nmap <Leader>dk <Plug>VimspectorRestart
+nmap <Leader>dl <Plug>VimspectorStepInto
 nnoremap <silent> <leader>W :wa!<CR> " <leader>W writes all buffers
 nnoremap <silent> <leader>cd :cd %:p:h<CR> " cd to the directory of the current buffer
 nnoremap <leader><Tab> <c-^> " switch between last two files
@@ -38,35 +41,37 @@ nnoremap <leader>j <C-w>j
 nnoremap <leader>k <C-w>k
 nnoremap <leader>l <C-w>l
 " Move to previous/next buffer
-nnoremap <silent>    <A-,> :BufferPrevious<CR>
-nnoremap <silent>    <A-.> :BufferNext<CR>
+nnoremap <silent> <A-,> :BufferPrevious<CR>
+nnoremap <silent> <A-.> :BufferNext<CR>
 " Re-order to previous/next buffer
-nnoremap <silent>    <C-<> :BufferMovePrevious<CR>
-nnoremap <silent>    <C->> :BufferMoveNext<CR>
+nnoremap <silent> <C-,> :BufferMovePrevious<CR>
+nnoremap <silent> <C-.> :BufferMoveNext<CR>
 " Goto buffer in position...
-nnoremap <silent>    <leader>1 :BufferGoto 1<CR>
-nnoremap <silent>    <leader>2 :BufferGoto 2<CR>
-nnoremap <silent>    <leader>3 :BufferGoto 3<CR>
-nnoremap <silent>    <leader>4 :BufferGoto 4<CR>
-nnoremap <silent>    <leader>5 :BufferGoto 5<CR>
-nnoremap <silent>    <leader>6 :BufferGoto 6<CR>
-nnoremap <silent>    <leader>7 :BufferGoto 7<CR>
-nnoremap <silent>    <leader>8 :BufferGoto 8<CR>
-nnoremap <silent>    <leader>9 :BufferLast<CR>
-nnoremap <silent>    <leader>p :BufferPin<CR>
-nnoremap <silent>    <leader>bc :BufferClose<CR>
-" Magic buffer-picking mode
-nnoremap <silent> <leader>sb    :BufferPick<CR>
-" Sort automatically by...
-nnoremap <silent> <leader>bb :BufferOrderByBufferNumber<CR>
-nnoremap <silent> <leader>bd :BufferOrderByDirectory<CR>
-nnoremap <silent> <leader>bl :BufferOrderByLanguage<CR>
-nnoremap <silent> <leader>bw :BufferOrderByWindowNumber<CR>
-" telescope bindings
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <silent> <leader>1 :BufferGoto 1<CR>
+nnoremap <silent> <leader>2 :BufferGoto 2<CR>
+nnoremap <silent> <leader>3 :BufferGoto 3<CR>
+nnoremap <silent> <leader>4 :BufferGoto 4<CR>
+nnoremap <silent> <leader>5 :BufferGoto 5<CR>
+nnoremap <silent> <leader>6 :BufferGoto 6<CR>
+nnoremap <silent> <leader>7 :BufferGoto 7<CR>
+nnoremap <silent> <leader>8 :BufferGoto 8<CR>
+nnoremap <silent> <leader>9 :BufferLast<CR>
+nnoremap <silent> <leader>bp :BufferPin<CR>
+nnoremap <silent> <leader>bc :BufferClose<CR>
+nnoremap <silent> <leader>bs :BufferPick<CR>
+" nvim-lsp
+nnoremap <silent> gd :lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> gh :lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> gD :lua vim.lsp.buf.implementation()<CR>
+nnoremap <silent> gr :lua vim.lsp.buf.references()<CR>
+nnoremap <silent> gR :lua vim.lsp.buf.rename()<CR>
+" vimspector
+nnoremap <silent> <leader>di :VimspectorInstall --all --force-all<CR>
+nnoremap <silent> <leader>da :call vimspector#Launch()<CR>
+nnoremap <silent> <leader>dq :call vimspector#Reset()<CR>
+nnoremap <silent> <leader>dc :call vimspector#Continue()<CR>
+nnoremap <silent> <leader>db :call vimspector#ToggleBreakpoint()<CR>
+nnoremap <silent> <leader>dT :call vimspector#ClearBreakpoints()<CR>
 
 " Insert mode Mappings
 inoremap <silent> <leader>w <ESC>:w!<CR> " <leader>w writes the whole buffer to the current file
