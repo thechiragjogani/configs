@@ -250,3 +250,4 @@ export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$
 export EDITOR=nvim
 source $HOME/.zsh_aliases
 source $HOME/.zsh_funcs
+export ip=10.10.227.3
