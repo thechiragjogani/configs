@@ -251,3 +251,17 @@ export EDITOR=nvim
 source $HOME/.zsh_aliases
 source $HOME/.zsh_funcs
 export ip=10.10.227.3
+
+export ip=10.10.167.232
+
+export ip=10.10.254.20
+
+export ip=10.10.236.136
+
+export ip=10.10.236.136
+
+export ip=10.10.236.136
+
+export ip=10.10.100.100
+
+export ip=10.10.10.10

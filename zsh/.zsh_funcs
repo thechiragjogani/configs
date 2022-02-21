@@ -146,8 +146,8 @@ vhs(){ruby /opt/tools/virtual-host-discovery/scan.rb --ip=$1 --host=$2}
 mscan(){sudo masscan -p4443,2075,2076,6443,3868,3366,8443,8080,9443,9091,3000,8000,5900,8081,6000,10000,8181,3306,5000,4000,8888,5432,15672,9999,161,4044,7077,4040,9000,8089,443,744 $1} #masscan
 
 nmapctf(){
-	ports=$(nmap -p- --min-rate=1000  -T5 $1 | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//)
-	nmap -sC -sV -vv - f -p$ports $1 | tee -a $2
+	ports=$(sudo nmap -p- --min-rate=1000 -Pn -T5 $1 | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//)
+	sudo nmap -sC -sV -vv -Pn -sN -f -p $ports $1 | tee -a $2
 }
 
 #----- Exploitation -----
@@ -157,17 +157,24 @@ ncl(){nc -l -n -vv -p $1}
 #----- CTF's -----
 #HackTheBox
 htb(){
-  pid=$(pgrep openvpn | sed -ne 's/\([0-9]*\)/\1/p'); kill $pid
+  pid=$(pgrep openvpn | sed -ne 's/\([0-9]*\)/\1/p'); sudo kill $pid
   cd $HOME/ctf/htb/
-  sudo openvpn *.ovpn
+  sudo openvpn *.ovpn </dev/null &>/dev/null &
+  clear
 }
 
 #TryHackMe
 thm(){
-  pid=$(pgrep openvpn | sed -ne 's/\([0-9]*\)/\1/p'); kill $pid
+  pid=$(pgrep openvpn | sed -ne 's/\([0-9]*\)/\1/p'); sudo kill $pid
   cd $HOME/ctf/thm/
-  sudo openvpn *.ovpn
+  sudo openvpn *.ovpn </dev/null &>/dev/null &
+  clear
 }
 
 #Get those flags
 ctf(){cd $HOME/ctf && ll}
+
+ctfip(){
+    ip=$1
+    echo "\nexport ip=$1" >> ~/.zshrc
+}
