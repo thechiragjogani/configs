@@ -25,21 +25,6 @@
       <property name="XF86Mail" type="empty"/>
       <property name="XF86WWW" type="empty"/>
     </property>
-    <property name="custom" type="empty">
-      <property name="Print" type="string" value="/usr/bin/xfce4-screenshooter"/>
-      <property name="&lt;Shift&gt;Print" type="string" value="/usr/share/kali-themes/xfce4-screenshooter --region"/>
-      <property name="&lt;Alt&gt;F1" type="string" value="xfce4-popup-whiskermenu --pointer"/>
-      <property name="&lt;Alt&gt;F2" type="string" value="xfce4-appfinder --collapsed"/>
-      <property name="&lt;Alt&gt;F3" type="string" value="xfce4-appfinder"/>
-      <property name="&lt;Primary&gt;Escape" type="string" value="xfce4-popup-whiskermenu"/>
-      <property name="&lt;Primary&gt;e" type="string" value="exo-open --launch FileManager"/>
-      <property name="&lt;Primary&gt;f" type="string" value="exo-open --launch WebBrowser"/>
-      <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="exo-open --launch TerminalEmulator tmux"/>
-      <property name="&lt;Primary&gt;&lt;Shift&gt;Escape" type="string" value="xfce4-taskmanager"/>
-      <property name="&lt;Primary&gt;&lt;Super&gt;l" type="string" value="xflock4"/>
-      <property name="&lt;Super&gt;p" type="string" value="xfce4-display-settings --minimal"/>
-      <property name="override" type="bool" value="true"/>
-    </property>
   </property>
   <property name="xfwm4" type="empty">
     <property name="default" type="empty">
@@ -146,6 +131,20 @@
       <property name="Left" type="string" value="left_key"/>
       <property name="Down" type="string" value="down_key"/>
       <property name="Escape" type="string" value="cancel_key"/>
+      <property name="override" type="bool" value="true"/>
+      <property name="Print" type="string" value="/usr/bin/xfce4-screenshooter"/>
+      <property name="&lt;Shift&gt;Print" type="string" value="/usr/share/kali-themes/xfce4-screenshooter --region"/>
+      <property name="&lt;Alt&gt;F1" type="string" value="xfce4-popup-whiskermenu --pointer"/>
+      <property name="&lt;Alt&gt;F2" type="string" value="xfce4-appfinder --collapsed"/>
+      <property name="&lt;Alt&gt;F3" type="string" value="xfce4-appfinder"/>
+      <property name="&lt;Primary&gt;Escape" type="string" value="xfce4-popup-whiskermenu"/>
+      <property name="&lt;Primary&gt;e" type="string" value="exo-open --launch FileManager"/>
+      <property name="&lt;Primary&gt;f" type="string" value="exo-open --launch WebBrowser"/>
+      <property name="&lt;Primary&gt;&lt;Alt&gt;t" type="string" value="exo-open --launch TerminalEmulator tmux"/>
+      <property name="&lt;Primary&gt;&lt;Shift&gt;Escape" type="string" value="xfce4-taskmanager"/>
+      <property name="&lt;Primary&gt;&lt;Super&gt;l" type="string" value="xflock4"/>
+      <property name="&lt;Super&gt;p" type="string" value="xfce4-display-settings --minimal"/>
+      <property name="Super_L" type="string" value="xfce4-popup-whiskermenu"/>
       <property name="override" type="bool" value="true"/>
     </property>
   </property>
