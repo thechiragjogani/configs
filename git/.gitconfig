@@ -33,3 +33,5 @@
   path = .gitlocal
 [url "https://thechiragjogani@github.com"]
 	insteadOf = https://github.com
+[safe]
+	directory = /opt/tools/nerd-fonts
