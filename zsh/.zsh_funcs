@@ -13,7 +13,7 @@ report() {
   evince $1.pdf </dev/null &>/dev/null &
 }
 updater() {
-  sudo apt --fix-broken install -y 2> /dev/null;
+  echo 'C@123456' | sudo -kS apt --fix-broken install -y 2> /dev/null;
   sudo apt-get update -y 2> /dev/null;
   sudo apt-get upgrade -y 2> /dev/null;
   sudo apt-get dist-upgrade -y 2> /dev/null;
