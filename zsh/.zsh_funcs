@@ -1,28 +1,13 @@
-mkfile() { mkdir -p "$(dirname "$1")" && sudo touch "$1";}
-report() {
-  pandoc *.md \
-  -o $1.pdf \
-  --from markdown+yaml_metadata_block+raw_html \
-  --to pdf \
-  --table-of-contents \
-  --toc-depth 6 \
-  --number-sections \
-  --highlight-style breezedark \
-  --template eisvogel \
-  --pdf-engine=pdflatex
-  evince $1.pdf </dev/null &>/dev/null &
-}
+mkfile() { mkdir -p "$(dirname "$1")" && cd "$(dirname "$1")" sudo touch "$1";}
 updater() {
-  echo 'C@123456' | sudo -kS apt --fix-broken install -y 2> /dev/null;
-  sudo apt-get update -y 2> /dev/null;
+  echo 'kali' | sudo -kS apt-get update -y 2> /dev/null;
+  sudo apt --fix-broken install -y 2> /dev/nullss;
   sudo apt-get upgrade -y 2> /dev/null;
   sudo apt-get dist-upgrade -y 2> /dev/null;
   sudo apt-get install kali-linux-everything -y 2> /dev/null;
-  sudo apt-get update -y 2> /dev/null;
   sudo apt autoremove -y 2> /dev/null;
   sudo apt autoclean -y 2> /dev/null;
   sudo apt clean -y 2> /dev/null;
-  sudo apt-get install -f -y 2> /dev/null;
   sudo cat /opt/labs.txt | xargs -I {} /usr/bin/zsh -c 'sudo docker pull {} 2> /dev/null'
 }
 goodbye() {
@@ -61,55 +46,50 @@ ex() {
 
 # Change up a variable number of directories
 # E.g: cu   -> cd ../, cu 2 -> cd ../../, cu 3 -> cd ../../../
-function cu {
-    local count=$1
-    if [ -z "${count}" ]; then
-        count=1
-    fi
-    local path=""
-    for i in $(seq 1 ${count}); do
-        path="${path}../"
-    done
-    cd $path
-}
+# function cu {
+#     local count=$1
+#     if [ -z "${count}" ]; then
+#         count=1
+#     fi
+#     local path=""
+#     for i in $(seq 1 ${count}); do
+#         path="${path}../"
+#     done
+#     cd $path
+# }
 #----- VIM-------
 # Open all modified files in vim tabs
-function vimod {
-    vim -p $(git status -suall | awk '{print $2}')
-}
+# function vimod {
+#     vim -p $(git status -suall | awk '{print $2}')
+# }
 
 # Open files modified in a git commit in vim tabs; defaults to HEAD.
 # Examples: virev 49808d5, virev HEAD/opt3
-function virev {
-    commit=$1
-    if [ -z "${commit}" ]; then
-      commit="HEAD"
-    fi
-    rootdir=$(git rev-parse --show-toplevel)
-    sourceFiles=$(git show --name-only --pretty="format:" ${commit} | grep -v '^$')
-    toOpen=""
-    for file in ${sourceFiles}; do
-      file="${rootdir}/${file}"
-      if [ -e "${file}" ]; then
-        toOpen="${toOpen} ${file}"
-      fi
-    done
-    if [ -z "${toOpen}" ]; then
-      echo "No files were modified in ${commit}"
-      return 1
-    fi
-    vim -p ${toOpen}
-}
+# function virev {
+#     commit=$1
+#     if [ -z "${commit}" ]; then
+#       commit="HEAD"
+#     fi
+#     rootdir=$(git rev-parse --show-toplevel)
+#     sourceFiles=$(git show --name-only --pretty="format:" ${commit} | grep -v '^$')
+#     toOpen=""
+#     for file in ${sourceFiles}; do
+#       file="${rootdir}/${file}"
+#       if [ -e "${file}" ]; then
+#         toOpen="${toOpen} ${file}"
+#       fi
+#     done
+#     if [ -z "${toOpen}" ]; then
+#       echo "No files were modified in ${commit}"
+#       return 1
+#     fi
+#     vim -p ${toOpen}
+# }
 
 # 'Safe' version of __git_ps1 to avoid errors on systems that don't have it
 function gitPrompt {
   command -v __git_ps1 > /dev/null && __git_ps1 "(%s)"
 }
-
-#-------- Pentesting and Bug Hunting -------
-#AWS
-s3ls(){aws s3 ls s3://$1}
-s3cp(){aws s3 cp $2 s3://$1}
 
 #------ Scanning and Enumeration ------
 
@@ -117,8 +97,6 @@ s3cp(){aws s3 cp $2 s3://$1}
 ipinfo(){curl http://ipinfo.io/$1}
 
 #----- Subdomain recon -----
-crtndstry(){/opt/tools/crtndstry/crtndstry.sh $1} #list subdomains
-
 certspotter(){curl -s https://certspotter.com/api/v0/certs\?domain\=$1 | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep $1} #list subdomains
 
 certprobe(){curl -s https://crt.sh/\?q\=\%.$1\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | httprobe | tee -a ./all.txt} #runs httprobe on all the hosts/subdomains from certspotter
@@ -127,27 +105,21 @@ am(){amass enum --passive -d $1 -json $1.json jq .name $1.json | sed "s/\"//g"| 
 
 crtsh(){curl -s https://crt.sh/?Identity=%.$1 | grep ">*.$1" | sed 's/<[/]*[TB][DR]>/\n/g' | grep -vE "<|^[\*]*[\.]*$1" | sort -u | awk 'NF'}
 
-certnmap(){curl https://certspotter.com/api/v0/certs\?domain\=$1 | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep $1  | nmap -T5 -Pn -sS -sC -i - -$1} #directlty nmap subdomains
+certnmap(){curl https://certspotter.com/api/v0/certs\?domain\=$1 | jq '.[].dns_names[]' | sed 's/\"//g' | sed 's/\*\.//g' | sort -u | grep $1  | nmapc -i - -$1} #directlty nmap subdomains
 
 #----- Directories recon -----
-#runs dirsearch and takes host and extension as arguments, dirsearch <host> <extensions> <output>
-dirsearch(){sudo python3 /opt/tools/dirsearch/dirsearch.py -u $1 -e $2 -t 100 -b | tee -a $3}
-
+#gobustdir <url> <output>
 gobustdir(){sudo gobuster dir -u "$1" -w "/usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt" -t 10 | tee -a $2}
 
 #gets all domains from crtsh, runs httprobe and then dir bruteforces all https hosts
 crtshdirsearch(){curl -s https://crt.sh/?q\=%.$1\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | httprobe -c 50 | grep https | xargs -n1 -I{} python3 /opt/tools/dirsearch/dirsearch.py -u {} -e $2 -t 150 -b | tee -a dirs.txt}
 
-#------- Enumeration -------
-#enumerate virtual hosts on a given IP address
-vhs(){ruby /opt/tools/virtual-host-discovery/scan.rb --ip=$1 --host=$2}
-
 #----- Port Scanning -----
 mscan(){sudo masscan -p4443,2075,2076,6443,3868,3366,8443,8080,9443,9091,3000,8000,5900,8081,6000,10000,8181,3306,5000,4000,8888,5432,15672,9999,161,4044,7077,4040,9000,8089,443,744 $1} #masscan
 
-nmapctf(){
-	ports=$(sudo nmap -p- --min-rate=1000 -Pn -T5 $1 | grep ^[0-9] | cut -d '/' -f 1 | tr '\n' ',' | sed s/,$//)
-	sudo nmap -sC -sV -vv -Pn -sN -f -p $ports $1 | tee -a $2
+nmapc(){
+  #nmapc <ip> <output>
+  sudo nmap -sC -sV -f -T5 -Pn -vv -p- $1 | tee -a $2
 }
 
 #----- Exploitation -----
@@ -158,7 +130,6 @@ ncl(){nc -l -n -vv -p $1}
 #HackTheBox
 htb(){
   pid=$(pgrep openvpn | sed -ne 's/\([0-9]*\)/\1/p'); sudo kill $pid
-  cd $HOME/ctf/htb/
   sudo openvpn *.ovpn </dev/null &>/dev/null &
   clear
 }
@@ -172,9 +143,18 @@ thm(){
 }
 
 #Get those flags
-ctf(){cd $HOME/ctf && ll}
+ctfip(){ctf; echo "\nexport ip=$1" > target}
 
-ctfip(){
-    ip=$1
-    echo "\nexport ip=$1" >> ~/.zshrc
+report() {
+  pandoc *.md \
+  -o $1.pdf \
+  --from markdown+yaml_metadata_block+raw_html \
+  --to pdf \
+  --table-of-contents \
+  --toc-depth 6 \
+  --number-sections \
+  --highlight-style breezedark \
+  --template eisvogel \
+  --pdf-engine=pdflatex
+  evince $1.pdf </dev/null &>/dev/null &
 }
