@@ -1,9 +1,9 @@
 mkfile() { mkdir -p "$(dirname "$1")" && cd "$(dirname "$1")" sudo touch "$1";}
 updater() {
-  sudo apt-get update -y 2> /dev/null;
-  sudo apt --fix-broken install -y 2> /dev/nullss;
-  sudo apt-get upgrade -y 2> /dev/null;
-  sudo apt-get dist-upgrade -y 2> /dev/null;
+  sudo apt update -y 2> /dev/null;
+  sudo apt --fix-broken install -y 2> /dev/null;
+  sudo apt upgrade -y 2> /dev/null;
+  sudo apt dist-upgrade -y 2> /dev/null;
   sudo apt autoremove -y 2> /dev/null;
   sudo apt autoclean -y 2> /dev/null;
   sudo apt clean -y 2> /dev/null;
