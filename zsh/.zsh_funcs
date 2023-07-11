@@ -143,7 +143,7 @@ thm(){
 }
 
 #Get those flags
-ctfip(){ctf; echo "\nexport ip=$1" > target}
+ctfip(){ctf; echo "\nexport ip=$1" > target; source $HOME/.zshrc}
 
 report() {
   pandoc *.md \
