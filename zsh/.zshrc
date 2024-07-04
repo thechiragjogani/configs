@@ -253,7 +253,7 @@ fi
 
 export GOROOT=/usr/local/go
 export GOPATH=/opt/tools:$HOME/codes/go
-export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin/:/opt/tools:/opt/pmp/:$GOPATH/bin:$GOROOT/bin
+export PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:$HOME/bin/:/opt/tools:/opt/pmp/:$GOPATH/bin:$GOROOT/bin:$PATH
 export EDITOR=nvim
 source $HOME/.zsh_aliases
 source $HOME/.zsh_funcs
