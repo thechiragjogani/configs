@@ -128,7 +128,8 @@ ncl(){nc -l -n -vv -p $1}
 #----- CTF's -----
 #HackTheBox
 htb(){
-  pid=$(pgrep openvpn | sed -ne 's/\([0-9]*\)/\1/p'); sudo kill $pid
+  pid=$(pgrep openvpn | tr '\n' ' ')
+  sudo kill $pid
   cd $HOME/ctf/thm/
   sudo openvpn *.ovpn </dev/null &>/dev/null &
   clear
@@ -136,7 +137,8 @@ htb(){
 
 #TryHackMe
 thm(){
-  pid=$(pgrep openvpn | sed -ne 's/\([0-9]*\)/\1/p'); sudo kill $pid
+  pid=$(pgrep openvpn | tr '\n' ' ')
+  sudo kill $pid
   cd $HOME/ctf/thm/
   sudo openvpn *.ovpn </dev/null &>/dev/null &
   clear
