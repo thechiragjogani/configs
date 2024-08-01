@@ -1,4 +1,4 @@
-mkfile() { mkdir -p "$(dirname "$1")" && cd "$(dirname "$1")" sudo touch "$1";}
+mkfile() { mkdir -p "$(dirname "$1")" && cd "$(dirname "$1")"; touch "$1";}
 updater() {
   sudo apt update -y 2> /dev/null;
   sudo apt --fix-broken install -y 2> /dev/null;
@@ -7,7 +7,7 @@ updater() {
   sudo apt autoremove -y 2> /dev/null;
   sudo apt autoclean -y 2> /dev/null;
   sudo apt clean -y 2> /dev/null;
-  sudo cat /opt/labs.txt | xargs -I {} /usr/bin/zsh -c 'sudo docker pull {} 2> /dev/null'
+  # sudo cat /opt/labs.txt | xargs -I {} /usr/bin/zsh -c 'sudo docker pull {} 2> /dev/null'
 }
 goodbye() {
   pentestlab stop bwapp;
@@ -43,19 +43,19 @@ ex() {
     fi
 }
 
-# Change up a variable number of directories
-# E.g: cu   -> cd ../, cu 2 -> cd ../../, cu 3 -> cd ../../../
-# function cu {
-#     local count=$1
-#     if [ -z "${count}" ]; then
-#         count=1
-#     fi
-#     local path=""
-#     for i in $(seq 1 ${count}); do
-#         path="${path}../"
-#     done
-#     cd $path
-# }
+Change up a variable number of directories
+E.g: cu   -> cd ../, cu 2 -> cd ../../, cu 3 -> cd ../../../
+function cu {
+    local count=$1
+    if [ -z "${count}" ]; then
+        count=1
+    fi
+    local path=""
+    for i in $(seq 1 ${count}); do
+        path="${path}../"
+    done
+    cd $path
+}
 #----- VIM-------
 # Open all modified files in vim tabs
 # function vimod {
@@ -111,7 +111,7 @@ certnmap(){curl https://certspotter.com/api/v0/certs\?domain\=$1 | jq '.[].dns_n
 gobustdir(){sudo gobuster dir -u "$1" -w "/usr/share/seclists/Discovery/Web-Content/directory-list-2.3-medium.txt" -t 10 | tee -a $2}
 
 #gets all domains from crtsh, runs httprobe and then dir bruteforces all https hosts
-crtshdirsearch(){curl -s https://crt.sh/?q\=%.$1\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | httprobe -c 50 | grep https | xargs -n1 -I{} python3 /opt/tools/dirsearch/dirsearch.py -u {} -e $2 -t 150 -b | tee -a dirs.txt}
+crtshdirsearch(){curl -s https://crt.sh/?q\=%.$1\&output\=json | jq -r '.[].name_value' | sed 's/\*\.//g' | sort -u | httprobe -c 50 | grep https | xargs -n1 -I{} python3 $HOME/Tools/dirsearch/dirsearch.py -u {} -e $2 -t 150 -b | tee -a dirs.txt}
 
 #----- Port Scanning -----
 mscan(){sudo masscan -p4443,2075,2076,6443,3868,3366,8443,8080,9443,9091,3000,8000,5900,8081,6000,10000,8181,3306,5000,4000,8888,5432,15672,9999,161,4044,7077,4040,9000,8089,443,744 $1} #masscan
@@ -128,17 +128,15 @@ ncl(){nc -l -n -vv -p $1}
 #----- CTF's -----
 #HackTheBox
 htb(){
-  pid=$(pgrep openvpn | tr '\n' ' ')
-  sudo kill $pid
-  cd $HOME/ctf/thm/
+  sudo kill $(pgrep openvpn | tr '\n' ' ')
+  cd $HOME/ctf/htb/
   sudo openvpn *.ovpn </dev/null &>/dev/null &
   clear
 }
 
 #TryHackMe
 thm(){
-  pid=$(pgrep openvpn | tr '\n' ' ')
-  sudo kill $pid
+  sudo kill $(pgrep openvpn | tr '\n' ' ')
   cd $HOME/ctf/thm/
   sudo openvpn *.ovpn </dev/null &>/dev/null &
   clear
