@@ -4,7 +4,7 @@ alias rem="sudo apt purge -y"
 alias ls='ls --color=always'
 alias ll="clear && ls --color=always -rthla"
 alias grep="grep --color=auto"
-alias tools="cd /opt/tools && ll"
+alias tools="cd ~/Tools && ll"
 alias locky="python /opt/tools/locky.py"
 alias pentestlab="/opt/tools/pentestlab/pentestlab.sh"
 alias zoom="zoom </dev/null &>/dev/null &"
